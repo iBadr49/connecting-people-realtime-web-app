@@ -1,0 +1,44 @@
+<%- include('./partials/head') %>
+
+<h1 class="productenTitel">Producten</h1>
+
+<section class="productContainer">
+  <% producten.forEach(product=> { %>
+
+  <div class="product">
+    <!-- deze linkt naar de detailpagina van een product -->
+    
+<!--------placeholders fixen voor de twee producten !!!!!!!!!!!-->
+    <div class="productBox">
+      <a href="/detail/?detailId=<%= product.id %>"> </a> 
+
+      <!-- foto uit de API -->
+      <% if(product.plaatjes.length) { %>
+      <img
+          src="<%= product.plaatjes[0].url %>"
+          loading="lazy"
+          alt="fotoProduct"
+          class="foto"
+      />
+
+      <!-- Placeholder foto-->
+      <% }else{ %>
+      <img
+        src="/assets/vini-mini-pinda-zakje.png"
+        alt="PlaceholderPinda"
+        class="foto"
+      />
+      <% } %>
+    </div>
+
+    <div class="productData">
+      <a class="productData-link" href="/detail?detailId=<%= product.id %>">
+        <h3 class="productName"><%= product.titel %></h3>
+      </a>
+      <span class="productPrice"> € <%= product.prijs %> </span>
+    </div>
+  </div>
+
+  <% }) %>
+</section>
+<%- include('./partials/foot') %>
