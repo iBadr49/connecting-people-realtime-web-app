@@ -31,12 +31,27 @@ body {
 
 /* ------------------------------------ HEADER */
 
+/* Standaardstijl voor de navigatie */
+.menu.hidden {
+  display: none;
+}
+
+/* Stijlen voor de navigatie op schermen groter dan 768px */
+@media (min-width: 768px) {
+  .menu {
+    display: block;
+  }
+  .toggle {
+    display: none;
+  }
+}
+
 nav {
   display: flex;
   justify-content: space-between; /* this will position the shopping.png on the left and the toggle on the right */
   align-items: center; /* this will vertically center the logo */
 }
-
+/* Style for the logo img */
 nav img.logo {
   margin: 0 auto; /* this will horizontally center the logo */
   width: 85px;
@@ -44,10 +59,18 @@ nav img.logo {
   padding-left: 42px;
 }
 
+/* Style for the profielicon img */
 nav a.profielIcon img {
   margin-right: 10px;
+  /* margin-bottom: 8px; */
   width: 32px;
   height: 32px;
+}
+
+/* Style for the shopping-cart img */
+.shopping {
+  height: 32px;
+  width: 32px;
 }
 
 /* Styles for the menu */
@@ -106,19 +129,12 @@ nav a.profielIcon img {
 }
 
 .close img {
-  width: 25px;
-  height: 25px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
 }
 
-/* Styles for the logo and navbar */
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-right: auto;
-  text-decoration: none;
-  color: var(--jet);
-}
+/* Styles for the navbar */
 
 nav {
   display: flex;
@@ -127,6 +143,122 @@ nav {
   background-color: var(--seasalt);
   border-bottom: 1px solid var(--platinum);
 }
+
+/* ----------------------------------------- Chat  */
+
+.chat-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.svg-button {
+  position: fixed;
+  border: none;
+  margin: 2px;
+  padding: 0;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 20rem;
+  height: 30rem;
+  background: rgba(255, 239, 235, 0.6);
+  backdrop-filter: blur(1rem);
+  border-radius: 2rem;
+  box-shadow: 2px 2px var(--lightgreen);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section h1 {
+  margin: 0;
+  padding: 0;
+  padding-top: 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+section h1 span {
+  font-size: 0.5rem;
+  /* display: inline-block; */
+  width: 4.5rem;
+  color: #009AAF;
+  text-transform: uppercase;
+}
+
+section ul {
+  margin: 0;
+  padding: 0.2em;
+  list-style-type: none;
+  flex-grow: 2;
+  width: 18em;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+section ul > li {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+section form {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  width: 18rem;
+  height: 2rem;
+  display: flex;
+}
+
+section form input[type='text'] {
+  margin: 0;
+  padding: 0 1rem;
+  border: none;
+  height: 2rem;
+  flex-grow: 2;
+  background: white;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border: 0;
+  opacity: 80%;
+  outline: none;
+  width: 100%;
+}
+
+section form > button {
+  padding: 0 0.6rem 0 0.4rem;
+  width: 2rem;
+  background: #72a7a5;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border: 0;
+  opacity: 80%;
+  outline: none;
+  transition: 0.2s;
+  width: 100%;
+}
+
+
+
 
 /* ---------------------------- AccountOverzicht, Mini | Profiel */
 
@@ -183,6 +315,9 @@ ul li span {
   color: var(--black);
   border: 1px solid var(--lightgreen);
 }
+
+
+
 
 /* ----------------------------------- Procespagina */
 
@@ -477,7 +612,7 @@ caption {
 /* ----------------------------------- Productenpagina */
 
 .productenTitel {
-  color: var(--groen);
+  color: var(--lightgreen);
   font-size: 40px;
   font-weight: 600;
   display: flex;
