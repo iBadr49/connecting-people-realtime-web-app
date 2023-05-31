@@ -165,17 +165,17 @@ nav {
   background-color: transparent;
 }
 
-main {
+.main-chatroom {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  min-height: 70vh;
   min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-section {
+.section-chatroom {
   width: 20rem;
   height: 30rem;
   background: rgba(255, 239, 235, 0.6);
@@ -187,7 +187,7 @@ section {
   align-items: center;
 }
 
-section h1 {
+.section-chatroom h1 {
   margin: 0;
   padding: 0;
   padding-top: 1rem;
@@ -195,7 +195,7 @@ section h1 {
   font-size: 1rem;
 }
 
-section h1 span {
+.section-chatroom h1 span {
   font-size: 0.5rem;
   /* display: inline-block; */
   width: 4.5rem;
@@ -203,7 +203,7 @@ section h1 span {
   text-transform: uppercase;
 }
 
-section ul {
+.section-chatroom ul {
   margin: 0;
   padding: 0.2em;
   list-style-type: none;
@@ -216,12 +216,12 @@ section ul {
   background: transparent;
 }
 
-section ul > li {
+.section-chatroom ul > li {
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
 }
 
-section form {
+.section-chatroom form {
   margin: 0 0 1rem 0;
   padding: 0;
   width: 18rem;
@@ -229,7 +229,7 @@ section form {
   display: flex;
 }
 
-section form input[type='text'] {
+.section-chatroom form input[type='text'] {
   margin: 0;
   padding: 0 1rem;
   border: none;
@@ -244,7 +244,7 @@ section form input[type='text'] {
   width: 100%;
 }
 
-section form > button {
+.section-chatroom form > button {
   padding: 0 0.6rem 0 0.4rem;
   width: 2rem;
   background: #72a7a5;
@@ -256,9 +256,6 @@ section form > button {
   transition: 0.2s;
   width: 100%;
 }
-
-
-
 
 /* ---------------------------- AccountOverzicht, Mini | Profiel */
 

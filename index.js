@@ -3,11 +3,19 @@ import { log } from "console";
 import express from "express";
 import { ppid } from "process";
 
-const url = "https://api.vinimini.fdnd.nl/api/v1/producten"; // URL naar Json data
-const url2 = "https://api.vinimini.fdnd.nl/api/v1";
+// socket io
+import * as path from "path";
+import { Server } from "socket.io";
+import { createServer } from "http";
 
 // Maak een nieuwe express app aan
 const app = express();
+
+const http = createServer(app);
+const io = new Server(http);
+
+const url = "https://api.vinimini.fdnd.nl/api/v1/producten"; // URL naar Json data
+const url2 = "https://api.vinimini.fdnd.nl/api/v1";
 
 //  Stel in hoe we express gebruiken
 app.set("view engine", "ejs");
@@ -17,8 +25,8 @@ app.set("views", "./views");
 app.use(express.static("public"));
 
 // afhandeling van formulieren
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Maak een route voor de pagina's
 app.get("/", (request, response) => {
@@ -86,10 +94,67 @@ app.post("/agenda", function (req, res, next) {
   });
 });
 
-// Stel het poortnummer in en start express
-app.set("port", process.env.PORT || 8000);
-app.listen(app.get("port"), function () {
-  console.log(`Application started on http://localhost:${app.get("port")}`);
+// ================================================
+
+app.get("/chatroom", (request, response) => {
+  response.render("chatroom");
+});
+
+const historySize = 50;
+
+let history = [];
+let membersLoaded = false;
+let htmlMemberList = null;
+
+// Serveer client-side bestanden
+io.on("connection", (socket) => {
+  // Log de connectie naar console
+  console.log("a user connected");
+  // Stuur de historie door, let op: luister op socket, emit op io!
+  io.emit("history", history);
+
+  // Luister naar een message van een gebruiker
+  socket.on("message", (message) => {
+    // Check de maximum lengte van de historie
+    while (history.length > historySize) {
+      history.shift();
+    }
+    // Voeg het toe aan de historie
+    history.push(message);
+    // Verstuur het bericht naar alle clients
+    io.emit("message", message);
+  });
+
+  // Luister naar een disconnect van een gebruiker
+  socket.on("disconnect", () => {
+    console.log("user disconnected");
+  });
+});
+
+function renderMembers(memberList) {
+  return memberList
+    .filter((member) => member.role.includes("student"))
+    .map((member) => renderMember(member))
+    .reduce((output, member) => output + member);
+}
+
+function renderMember(member) {
+  return `
+    <article>
+      <h2>${member.name}</h2>
+      <p>${member.bio ? member.bio.html : ""}</p>
+    </article>
+  `;
+}
+
+function longPollExample(io) {
+  io.emit("whatever", "somebody set up us the bomb!");
+}
+
+// =================================================
+
+http.listen(8001, () => {
+  console.log("listening on http://localhost:8001");
 });
 
 /**
@@ -100,7 +165,7 @@ app.listen(app.get("port"), function () {
 async function fetchJson(url) {
   return await fetch(url)
     .then((response) => response.json())
-    .catch((error) => error)
+    .catch((error) => error);
 }
 /**
  * postJson() is a wrapper for the experimental node fetch api. It fetches the url
@@ -112,10 +177,10 @@ async function fetchJson(url) {
  */
 export async function postJson(url, body) {
   return await fetch(url, {
-    method: 'post',
+    method: "post",
     body: JSON.stringify(body),
-    headers: { 'Content-Type': 'application/json' },
+    headers: { "Content-Type": "application/json" },
   })
     .then((response) => response.json())
-    .catch((error) => error)
+    .catch((error) => error);
 }
