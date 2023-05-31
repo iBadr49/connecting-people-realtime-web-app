@@ -165,6 +165,16 @@ nav {
   background-color: transparent;
 }
 
+/* Animatie */
+.svg-button {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.svg-button:hover {
+  transform: scale(1.2);
+}
+
 .main-chatroom {
   margin: 0;
   padding: 0;
