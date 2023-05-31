@@ -1,0 +1,785 @@
+/* --------------------------- Import */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&display=swap");
+
+:root {
+  --yellow: #f4eb34;
+  --white: #fff;
+  --black: #000;
+  --lightgreen: #72a7a5;
+  --jet: #333333;
+  --seasalt: #f7f7f7;
+  --platinum: #DDDDDD;
+  --silver: #ccc;
+  --verdigris: #72AFA6;
+  --azure: #E4F2F2;
+  --lightblue: #B5DBDC;
+  --timberwolf: #D3D3D3;
+  --bluemunsell: #009AAF;
+  --dimgray: #666;
+  --whitesmoke: #f5f5f5;
+  --antiflashwhite: #ededed;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+
+/* ------------------------------------ HEADER */
+
+/* Standaardstijl voor de navigatie */
+.menu.hidden {
+  display: none;
+}
+
+/* Stijlen voor de navigatie op schermen groter dan 768px */
+@media (min-width: 768px) {
+  .menu {
+    display: block;
+  }
+  .toggle {
+    display: none;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; /* this will position the shopping.png on the left and the toggle on the right */
+  align-items: center; /* this will vertically center the logo */
+}
+/* Style for the logo img */
+nav img.logo {
+  margin: 0 auto; /* this will horizontally center the logo */
+  width: 85px;
+  height: 60px;
+  padding-left: 42px;
+}
+
+/* Style for the profielicon img */
+nav a.profielIcon img {
+  margin-right: 10px;
+  /* margin-bottom: 8px; */
+  width: 32px;
+  height: 32px;
+}
+
+/* Style for the shopping-cart img */
+.shopping {
+  height: 32px;
+  width: 32px;
+}
+
+/* Styles for the menu */
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--yellow);
+  padding: 1rem;
+  display: none;
+}
+
+.menu.show {
+  display: block;
+  z-index: 1;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 10em;
+}
+
+.menu li {
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.menu a {
+  color: var(--jet);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+/* Styles for the toggle button */
+.toggle {
+  display: inline-block;
+}
+
+.toggle img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* Styles for the close button */
+.close {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+}
+
+.close img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* Styles for the navbar */
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--seasalt);
+  border-bottom: 1px solid var(--platinum);
+}
+
+/* ----------------------------------------- Chat  */
+
+.chat-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.svg-button {
+  position: fixed;
+  border: none;
+  margin: 2px;
+  padding: 0;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+}
+
+.main-chatroom {
+  margin: 0;
+  padding: 0;
+  min-height: 70vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-chatroom {
+  width: 20rem;
+  height: 30rem;
+  background: rgba(255, 239, 235, 0.6);
+  backdrop-filter: blur(1rem);
+  border-radius: 2rem;
+  box-shadow: 2px 2px var(--lightgreen);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-chatroom h1 {
+  margin: 0;
+  padding: 0;
+  padding-top: 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.section-chatroom h1 span {
+  font-size: 0.5rem;
+  /* display: inline-block; */
+  width: 4.5rem;
+  color: #009AAF;
+  text-transform: uppercase;
+}
+
+.section-chatroom ul {
+  margin: 0;
+  padding: 0.2em;
+  list-style-type: none;
+  flex-grow: 2;
+  width: 18em;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+.section-chatroom ul > li {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.section-chatroom form {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  width: 18rem;
+  height: 2rem;
+  display: flex;
+}
+
+.section-chatroom form input[type='text'] {
+  margin: 0;
+  padding: 0 1rem;
+  border: none;
+  height: 2rem;
+  flex-grow: 2;
+  background: white;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border: 0;
+  opacity: 80%;
+  outline: none;
+  width: 100%;
+}
+
+.section-chatroom form > button {
+  padding: 0 0.6rem 0 0.4rem;
+  width: 2rem;
+  background: #72a7a5;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border: 0;
+  opacity: 80%;
+  outline: none;
+  transition: 0.2s;
+  width: 100%;
+}
+
+/* ---------------------------- AccountOverzicht, Mini | Profiel */
+
+.container {
+  text-align: center;
+}
+
+.box1,
+.box2 {
+  margin: 20px;
+  border: 1px solid var(--lightgreen);
+  vertical-align: top;
+}
+
+.box1 {
+  background-color: var(--lightgreen);
+  color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.box2 {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px var(--lightgreen);
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+ul li span {
+  font-weight: bold;
+}
+
+.btn {
+  display: block;
+  background-color: var(--lightgreen);
+  color: var(--white);
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 10px auto;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--lightgreen);
+}
+
+
+
+
+/* ----------------------------------- Procespagina */
+
+/* -------------- Stapenplan style */
+.procesContainer{
+border-radius: 10px;
+box-shadow: 2px 2px 20px var(--lightgreen);
+padding: 10px;
+margin: 20px;
+align-items: center;
+margin-bottom: 2rem;
+}
+
+/* Process Title */
+.procesTitel {
+  font-size: 36px;
+  font-weight: bold;
+  justify-items: center;
+  color: var(--lightgreen);
+  text-align: center; /* center align the text */
+}
+
+/* Process Container */
+.procesContainer {
+  margin-top: 30px;
+}
+
+/* Process Schema Title */
+.procesContainer h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--black);
+}
+
+/* Process Steps */
+.procesContainer ol {
+  list-style-type: none;
+  counter-reset: steps;
+  margin: 0;
+  padding: 0;
+}
+
+.procesContainer li {
+  margin-top: 20px;
+  position: relative;
+}
+
+/* Step Title */
+.procesContainer h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--lightgreen);
+}
+
+/* Step Description */
+.procesContainer li p {
+  margin: 10px 0;
+}
+
+/* Step Number */
+.procesContainer li:before {
+  content: counter(steps);
+  counter-increment: steps;
+  position: absolute;
+  top: -10px;
+  left: -25px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--yellow);
+  color: var(--lightgreen);
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+/* ---------------- Vinimini Tips */
+
+.tipsContainer {
+  background-color: var(--lightgreen);
+  color: var(--black);
+  padding: 20px;
+  margin: 20px;
+  /* text-align: center; */
+  border-radius: 10px;
+}
+
+
+.tipsContainer p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.tipsContainer .proces {
+  background-image: url("path/to/image.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  margin-top: 20px;
+}
+
+/* -------------------------------------------------- Calendar */
+
+/* A 7 column grid on the table */
+#calendar {
+  margin-left: 10%;
+  margin-bottom: 10%;
+  margin: 20px;
+  /*margin:0 auto;*/
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#calendar tr,
+#calendar tbody {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+}
+
+caption {
+  text-align: center;
+  grid-column: 1 / -1;
+  font-size: 130%;
+  font-weight: bold;
+  padding: 30px;
+}
+
+#calendar a {
+  text-decoration: none;
+}
+
+#calendar td,
+#calendar th {
+  padding: 4px;
+  box-sizing: border-box;
+  border: 4px solid var(--silver);
+}
+
+#calendar .weekdays {
+  background: var(--lightgreen);
+}
+
+#calendar .weekdays th {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 20px;
+  border: none;
+  padding: 10px 6px;
+  color: var(--white);
+  font-size: 13px;
+}
+
+#calendar td {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+#calendar .days li:hover {
+  background: var(--timberwolf);
+}
+
+#calendar .date {
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 4px;
+  background: var(--verdigris);
+  color: var(--white);
+  width: 20px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  align-self: flex-end;
+}
+
+#calendar .event {
+  flex: 0 0 auto;
+  font-size: 13px;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+  line-height: 14px;
+  background: var(--azure);
+  border: 1px solid var(--lightblue);
+  color: var(--bluemunsell);
+  text-decoration: none;
+}
+
+#calendar .event-desc {
+  color: var(--dimgray);
+  margin: 3px 0 7px 0;
+  text-decoration: none;
+}
+
+#calendar .other-month {
+  background: var(--whitesmoke);
+  color: var(--dimgray);
+}
+
+/* ============================
+			Responsiveness  Calendar
+   ============================*/
+
+@media (max-width: 768px) {
+  #calendar .weekdays,
+  #calendar .other-month {
+    display: none;
+  }
+
+  #calendar li {
+    height: auto;
+    border: 1px solid var(--antiflashwhite);
+    width: 100%;
+    padding: 10px;
+    margin-bottom: -1px;
+  }
+
+  #calendar,
+  #calendar tr,
+  #calendar tbody {
+    grid-template-columns: 1fr;
+  }
+
+  #calendar tr {
+    grid-column: 1 / 2;
+  }
+
+  #calendar .date {
+    align-self: flex-start;
+  }
+}
+
+/* ---------------------------------- Notitie Posten */
+
+.form {
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px var(--lightgreen);
+  border: 1px solid var(--lightgreen);
+  max-width: 100%;
+  margin: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.notitieFieldset {
+  border: none;
+}
+
+.notitieFieldset label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.notitieFieldset input, .notitieFieldset textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--black);
+  font-size: 16px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.notitieFieldset input[type="datetime-local"] {
+  margin-top: 10px;
+}
+.notitieFieldset textarea {
+  height: 180px;
+}
+
+.notitieSubmit {
+  display: block;
+  margin-top: 20px;
+  margin-left: 13px;
+  padding: 10px;
+  background-color: var(--lightgreen);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.note h1{
+  text-align: center;
+  color: var(--lightGreen);
+}
+
+/* ----------------------------------- Productenpagina */
+
+.productenTitel {
+  color: var(--lightgreen);
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.productContainer {
+  display: grid;
+  --columns: 1;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  z-index: 0;
+}
+
+.product {
+  position: relative;
+  text-align: center;
+  background-color: var(--whitesmoke);
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px var(--lightgreen);
+  padding: 20px;
+  margin: 15px;
+}
+
+.productBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* background-color: rgb(255, 255, 255); */
+}
+
+.productData {
+  text-align: left;
+  /* background-color: rgb(255, 255, 255); */
+}
+
+.productData-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ------------------------------------------ omdat de productbox relative is, is dat hele vlak nu een link naar de detailpagina */
+.productData-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.productName {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--lightgreen);
+}
+
+.productPrice {
+  color: var(--black);
+  font-weight: 500;
+}
+
+.foto {
+  max-width: 18em;
+  border-radius: 5%;
+}
+
+@media all and (min-width: 700px) {
+  .productContainer {
+    --columns: 2;
+  }
+}
+@media all and (min-width: 1000px) {
+  .productContainer {
+    --columns: 3;
+  }
+}
+@media all and (min-width: 1200px) {
+  .productContainer {
+    --columns: 4;
+  }
+}
+
+/*  ----------------------------------------- Detailpagina */
+
+.detail-title {
+  color: var(--lightgreen);
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+span p {
+  font-size: 1em;
+  line-height: 1.4rem;
+  text-align: left;
+  font-weight: 300;
+  color: var(--black);
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+span ul {
+  display: none;
+}
+
+span li {
+  margin-bottom: 0.5em;
+  color: var(--yellow);
+}
+
+/* -------------------------------------- Detailpagina centeren */
+
+.image-detail {
+  width: 100%;
+  height: auto;
+  /* max-width: 40vw; */
+  margin: 0 auto;
+}
+
+.detail-price {
+  margin-left: 1.2rem;
+  color: var(--lightgreen);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+span button {
+  margin-left: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.detail-container {
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px var(--lightgreen);
+  border: 1px solid var(--lightgreen);
+  margin: 20px;
+  padding: 20px;
+  max-width: 70em;
+ }
+
+/* ----------------------------------------- Footer */
+
+footer {
+  margin-top: 5rem;
+  border-top: 1px solid var(--platinum);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "i"
+    "s"
+    "m";
+  justify-items: center;
+  text-align: center;
+  grid-column-gap: 20px;
+}
+
+footer h2 {
+  color: var(--verdigris);
+}
+
+  @media (min-width: 560px) {
+   footer { 
+    margin-top: 10em;
+    padding: 1em 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "i s m";
+    grid-column-gap: 0px;
+  }
+}
+

@@ -1,0 +1,221 @@
+<%- include('./partials/head.ejs') %>
+
+<!------------------------------------------------------ Calendar -->
+
+<table id="calendar">
+    <caption>
+      <span>Mei 2023</span>
+    </caption>
+    <tr class="weekdays">
+      <th scope="col">Zondag</th>
+      <th scope="col">Maandag</th>
+      <th scope="col">Dinsdag</th>
+      <th scope="col">Woensdag</th>
+      <th scope="col">Donderdag</th>
+      <th scope="col">Vrijdag</th>
+      <th scope="col">Zaterdag</th>
+    </tr>
+  
+    <tr class="days">
+      <td class="day other-month">
+        <div class="date">27</div>
+      </td>
+      <td class="day other-month">
+        <div class="date">28</div>
+        <div class="event">
+          <div class="event-desc">Jouw Mini krijgt vandaag ...</div>
+          <div class="event-time">1:00pm</div>
+        </div>
+      </td>
+      <td class="day other-month">
+        <div class="date">29</div>
+      </td>
+      <td class="day other-month">
+        <div class="date">30</div>
+      </td>
+      <td class="day other-month">
+        <div class="date">31</div>
+      </td>
+  
+      <td class="day">
+        <div class="date">1</div>
+      </td>
+      <td class="day">
+        <div class="date">2</div>
+        <div class="event">
+          <div class="event-desc">Vandaag tijd om ...</div>
+          <div class="event-time">2:00pm</div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="day">
+        <div class="date">3</div>
+      </td>
+      <td class="day">
+        <div class="date">4</div>
+      </td>
+      <td class="day">
+        <div class="date">5</div>
+      </td>
+      <td class="day">
+        <div class="date">6</div>
+      </td>
+      <td class="day">
+        <div class="date">7</div>
+        <div class="event">
+          <div class="event-desc">Mama's Meeting</div>
+          <div class="event-time">6:00pm to 7:30pm</div>
+        </div>
+      </td>
+      <td class="day">
+        <div class="date">8</div>
+      </td>
+      <td class="day">
+        <div class="date">9</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="day">
+        <div class="date">10</div>
+      </td>
+      <td class="day">
+        <div class="date">11</div>
+      </td>
+      <td class="day">
+        <div class="date">12</div>
+      </td>
+      <td class="day">
+        <div class="date">13</div>
+      </td>
+      <td class="day">
+        <div class="date">14</div>
+        <div class="event">
+          <div class="event-desc">Jouw Mini krijgt vandaag ...</div>
+          <div class="event-time">2:00pm</div>
+        </div>
+      </td>
+      <td class="day">
+        <div class="date">15</div>
+      </td>
+      <td class="day">
+        <div class="date">16</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="day">
+        <div class="date">17</div>
+      </td>
+      <td class="day">
+        <div class="date">18</div>
+      </td>
+      <td class="day">
+        <div class="date">19</div>
+      </td>
+      <td class="day">
+        <div class="date">20</div>
+      </td>
+      <td class="day">
+        <div class="date">21</div>
+      </td>
+      <td class="day">
+        <div class="date">22</div>
+      </td>
+      <td class="day">
+        <div class="date">23</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="day">
+        <div class="date">24</div>
+      </td>
+      <td class="day">
+        <div class="date">25</div>
+        <div class="event">
+          <div class="event-desc">Gesprek met mini consultant</div>
+          <div class="event-time">1:00pm to 2:00pm</div>
+        </div>
+      </td>
+      <td class="day">
+        <div class="date">26</div>
+      </td>
+      <td class="day">
+        <div class="date">27</div>
+      </td>
+      <td class="day">
+        <div class="date">28</div>
+      </td>
+      <td class="day">
+        <div class="date">29</div>
+      </td>
+      <td class="day">
+        <div class="date">30</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="day">
+        <div class="date">31</div>
+      </td>
+      <td class="day other-month">
+        <div class="date">1</div>
+        <!-- Next Month -->
+      </td>
+      <td class="day other-month">
+        <div class="date">2</div>
+      </td>
+      <td class="day other-month">
+        <div class="date">3</div>
+      </td>
+      <td class="day other-month">
+        <div class="date">4</div>
+      </td>
+      <td class="day other-month">
+        <div class="date">5</div>
+      </td>
+      <td class="day other-month">
+        <div class="date">6</div>
+      </td>
+    </tr>
+  </table>
+
+<!--------------------------------------------------------- Notitie -->
+
+  <div class="note">
+    <h1>Mini Notities</h1>
+  
+    <% if (typeof(error) != 'undefined') { %>
+    <strong>Er ging iets mis!</strong>
+    <% } %>
+  
+    <div class="form">
+      <form action="/agenda" method="post">
+        <input type="hidden" name="persoonId" value="clemozv3c3eod0bunahh71sx7">
+        <fieldset class="notitieFieldset">
+          <label>
+            Titel <span>(Notitie)</span>
+            <input id="input" type="text" required name="titel" />
+          </label>
+  
+          <label>
+            Notitie <span>(Beschrijving)</span>
+            <textarea id="input" required name="beschrijving" ></textarea>
+          </label>
+  
+          <label
+            >Datum
+            <input id="input" type="datetime-local" required name="datum" />
+          </label>
+  
+          <label
+            >Herinnering
+            <input id="input" type="datetime-local" required name="herinnering" />
+          </label>
+        </fieldset>
+  
+        <button class="notitieSubmit" type="submit">Toevoegen</button>
+      </form>
+    </div>
+    </section>
+  </div>
+
+<%- include('./partials/foot.ejs') %>
