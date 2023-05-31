@@ -269,12 +269,12 @@ nav {
 
 .own-time {
   color: var(--bluemunsell);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 
 .own-message {
   background-color: rgba(148, 201, 189, 0.5);
-  border-radius: 2em;
+  border-radius: 2rem;
   margin-top: 1em;
 }
 
