@@ -2,7 +2,9 @@
 
 <!------------------------------------------------------ Calendar -->
 
-<table id="calendar">
+<div id="calendarContainer">
+  <div id="toggleCalendar" class="accordion-toggle">Agenda</div>
+<table id="calendar" class="hidden">
     <caption>
       <span>Mei 2023</span>
     </caption>
@@ -177,6 +179,7 @@
       </td>
     </tr>
   </table>
+</div>
 
 <!--------------------------------------------------------- Notitie -->
 
@@ -217,5 +220,31 @@
     </div>
     </section>
   </div>
+
+<section class="results">
+<div class="form-result">
+    <h2>Titel: Pinda</h2>
+    <p>Beschrijving: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    <p>Datum: 22-03-23 08:00:45</p>
+    <p>Herinnering: 22-03-23 10:20:59</p>
+  </div>
+</div>
+
+<div class="form-result">
+  <h2>Titel: Ei </h2>
+  <p>Beschrijving: Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
+  <p>Datum: 22-03-23 08:00:45</p>
+  <p>Herinnering: 22-03-23 10:20:59</p>
+</div>
+</div>
+
+<div class="form-result">
+  <h2>Titel: Mini </h2>
+  <p>Beschrijving: Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
+  <p>Datum: 22-03-23 08:00:45</p>
+  <p>Herinnering: 22-03-23 10:20:59</p>
+</div>
+</div>
+</section>
 
 <%- include('./partials/foot.ejs') %>

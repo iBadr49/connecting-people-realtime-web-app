@@ -1,4 +1,11 @@
 let socket = io()
+let messages = document.querySelector('section ul')
+let input = document.querySelector('input')
+
+// State messages
+const loadingState = document.querySelector('span.loading')
+const emptyState = document.querySelector('span.empty')
+const errorState = document.querySelector('span.offline')
 
 // Voeg alleen event listeners toe als JavaScript beschikbaar is
 document.addEventListener("DOMContentLoaded", function () {
@@ -6,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggle");
   const close = document.getElementById("close");
 
+// --------------------------- Menuhamburger  
   if (menu && toggle && close) {
     toggle.addEventListener("click", function (event) {
       event.preventDefault();
@@ -19,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-let messages = document.querySelector('section ul')
-let input = document.querySelector('input')
-
+// ---------------------------- socket.io 
+// Luister naar het submit event
 document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault()
+
   if (input.value) {
     socket.emit('message', input.value)
     input.value = ''
@@ -48,6 +56,17 @@ function addMessage(message) {
   messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
   messages.scrollTop = messages.scrollHeight
 }
+
+// Agenda
+window.addEventListener('DOMContentLoaded', function () {
+  const toggleCalendar = document.getElementById('toggleCalendar');
+  const calendar = document.getElementById('calendar');
+
+  toggleCalendar.addEventListener('click', function () {
+    calendar.classList.toggle('active');
+    toggleCalendar.classList.toggle('active');
+  });
+});
 
 
 
