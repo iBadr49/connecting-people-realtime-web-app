@@ -52,10 +52,10 @@ socket.on('history', (history) => {
   })
 })
 
-function addMessage(message) {
-  messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
-  messages.scrollTop = messages.scrollHeight
-}
+// function addMessage(message) {
+//   messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
+//   messages.scrollTop = messages.scrollHeight
+// }
 
 // Agenda
 window.addEventListener('DOMContentLoaded', function () {
@@ -68,6 +68,22 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+function addMessage(message) {
+  const currentTime = new Date().toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' });
+ 
+  const messageElement = document.createElement('li');
+  const timeElement = document.createElement('span');
+
+  messageElement.classList.add('own-message')
+  timeElement.classList.add('own-time')
+
+  messages.appendChild(Object.assign(messageElement, { textContent: message }))
+  messages.appendChild(Object.assign(timeElement, { textContent: currentTime }));
+  messages.scrollTop = messages.scrollHeight
+
+ 
+}
 
 
 // NO-JS BLABLA

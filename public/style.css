@@ -257,6 +257,24 @@ nav {
   width: 100%;
 }
 
+.own-time {
+  color: var(--bluemunsell);
+  font-size: 0.7rem;
+}
+
+.own-message {
+  background-color: rgba(148, 201, 189, 0.5);
+  border-radius: 2em;
+  margin-top: 1em;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 1px;
+}
+
+
+
 /* ---------------------------- AccountOverzicht, Mini | Profiel */
 
 .container {
@@ -286,7 +304,7 @@ nav {
   box-shadow: 0px 0px 10px var(--lightgreen);
 }
 
-ul li {
+.gegevens {
   list-style: none;
   margin-bottom: 10px;
 }
