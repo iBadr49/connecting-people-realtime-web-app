@@ -32,27 +32,21 @@ Express is een framework voor Node.js waarmee ontwikkelaars gemakkelijk web-appl
 Wat is EJS:
 EJS is een sjabloontaal waarmee ontwikkelaars dynamische HTML-pagina's kunnen maken in Node.js-applicaties. Het wordt gebruikt om variabelen, conditionele logica en herbruikbare componenten in HTML-pagina's in te voegen, waardoor het bouwen van webpagina's eenvoudiger en efficiënter wordt.
 
+ Tools 🧰:
+-  VsCode
+-  Pen&Papier
+-  Laptop
 
-<ul>
-<li><strong>TOOLS 🧰:</strong></li>
-<li>VSCode</li>
-<li>Pen & Papier</li>
-<li>Laptop</li>
-</ul>
+Gebruikte Technieken 🛠️:
+- Html
+- Css
+- Node.js
+- Js
+- Socket.io
 
-<ul>
-<li><strong>GEBRUIKTE TECHNIEKEN 🛠️:</strong></li>
-<li>HTML</li>
-<li>CSS</li>
-<li>Javascript</li>
-<li>Node<li>
-<li>Socket.io<li>
-</ul>
-
-<ul>
-<li><strong>COMMUNICATIE MIDDELEN 🗣️:</strong></li>
-<li>Microsoft Teams</li>
-</ul>
+Communicatie Middelen 🗣️:
+- Teams
+- WhatsApp
 
 
 ## 🌐 Bronnen
