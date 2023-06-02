@@ -13,9 +13,9 @@
 * [Licentie](#licentie)
 
 ## 🗒️ Beschrijving
-<strong>Vini Mini 🖌️:</strong>
+<strong>Vinimini 🖌️:</strong>
 
-<li>Maak een chatroom via socket.io</li>
+<li>Een chatroom gemaakt waar de verzorgers of ouders tussen elkaar kunnen chatten!</li>
 </ul>
 
 ## 👩🏼‍💻👩🏾‍💻👨🏻‍💻👨🏼‍💻 Kenmerken
@@ -58,11 +58,8 @@ EJS is een sjabloontaal waarmee ontwikkelaars dynamische HTML-pagina's kunnen ma
 ## 🌐 Bronnen
 
 <ul>
-
 <li>https://github.com//</li>
-
 <li>https://www.google.nl/</li>
-
 </ul>
 
 
