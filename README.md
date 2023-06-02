@@ -1,5 +1,5 @@
 
-# Vini Mini chatroom
+# Vinimini | Chatroom
 
 ![Schermafbeelding 2023-06-02 104326](https://github.com/iBadr49/connecting-people-realtime-web-app/assets/112856683/b41b55ed-02c8-45d6-ac24-31479b003d0f)
 
