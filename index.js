@@ -103,44 +103,53 @@ app.get("/chatroom", (request, response) => {
 const historySize = 50;
 
 let history = [];
-// let membersLoaded = false;
-// let htmlMemberList = null;
+let membersLoaded = false;
+let htmlMemberList = null;
 
 // Serveer client-side bestanden
-app.use(express.static(path.resolve('public')))
-
-// Start de socket.io server op
-ioServer.on('connection', (client) => {
+io.on("connection", (socket) => {
   // Log de connectie naar console
-  console.log(`user ${client.id} connected`)
-
-  // Stuur de history
-  client.emit('history', history)
+  console.log("a user connected");
+  // Stuur de historie door, let op: luister op socket, emit op io!
+  io.emit("history", history);
 
   // Luister naar een message van een gebruiker
-  client.on('message', (message) => {
+  socket.on("message", (message) => {
     // Check de maximum lengte van de historie
     while (history.length > historySize) {
-      history.shift()
+      history.shift();
     }
     // Voeg het toe aan de historie
-    history.push(`user ${client.id}: ` + message)
-
+    history.push(message);
     // Verstuur het bericht naar alle clients
-    ioServer.emit("message", `user ${client.id}: ` + message);
-  })
+    io.emit("message", message);
+  });
 
   // Luister naar een disconnect van een gebruiker
-  client.on('disconnect', () => {
-    // Log de disconnect
-    console.log(`user ${client.id} disconnected`)
-  })
-})
+  socket.on("disconnect", () => {
+    console.log("user disconnected");
+  });
+});
 
-// Start een http server op het ingestelde poortnummer en log de url
-http.listen(port, () => {
-  console.log('listening on http://localhost:' + port)
-})
+function renderMembers(memberList) {
+  return memberList
+    .filter((member) => member.role.includes("student"))
+    .map((member) => renderMember(member))
+    .reduce((output, member) => output + member);
+}
+
+function renderMember(member) {
+  return `
+    <article>
+      <h2>${member.name}</h2>
+      <p>${member.bio ? member.bio.html : ""}</p>
+    </article>
+  `;
+}
+
+function longPollExample(io) {
+  io.emit("whatever", "somebody set up us the bomb!");
+}
 
 // =================================================
 
