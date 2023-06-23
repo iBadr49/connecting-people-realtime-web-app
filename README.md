@@ -9,19 +9,22 @@
 * [Beschrijving](#beschrijving)
 * [Kenmerken](#kenmerken)
 * [Bronnen](#bronnen)
+* [Gebruik](#gebruik)
 * [Licentie](#licentie)
 
 ## 🗒️ Beschrijving
-<strong>Vinimini 🖌️:</strong>
+<strong>Vinimini:</strong>
 
-<li>Een chatroom gemaakt waar de verzorgers of ouders tussen elkaar kunnen chatten!</li>
+<li>Een chatroom gemaakt waar de verzorgers of ouders tussen elkaar kunnen chatten, waar ik deze [userstory#6](https://github.com/orgs/fdnd-agency/projects/6?pane=issue&itemId=10774985) heb geimplementeerd.</li>
 </ul>
 
-## 👩🏼‍💻👩🏾‍💻👨🏻‍💻👨🏼‍💻 Kenmerken
+## Gebruik
 
-Lijst met gebruikte tools, technieken en communicatie middelen.
-Dit project is gemaakt met Node, Express, EJS.
+Ik heb deze website op mobile-versie gebouwd voor opdrachtgever vinimini, dus na het inloggen op je vinimini accouct kan je je gegevens zien, proces, agenda, vinimini producten, en de chatroom waar je tussen de minions kan communiceren. 
 
+- Als je de website niet met de link kan openen, dan kan je mijn [figma](https://www.figma.com/file/2TLM9ivN6gl8fGoKuWwDtI/Mijn-Website-%7C-Realtime-web-app?type=design&node-id=0%3A1&mode=design&t=3VN5odMlgWETj3kU-1) bestand gebruiken en mijn website bekijken.
+
+## Kenmerken
 Wat is Node:
 Node.js is een software platform waarmee ontwikkelaars JavaScript kunnen gebruiken om applicaties te bouwen die op de computer kunnen draaien, net zoals in een webbrowser. Het biedt veel handige functies en is populair vanwege de snelle en efficiënte manier waarop het met data kan omgaan.
 
@@ -31,11 +34,9 @@ Express is een framework voor Node.js waarmee ontwikkelaars gemakkelijk web-appl
 Wat is EJS:
 EJS is een sjabloontaal waarmee ontwikkelaars dynamische HTML-pagina's kunnen maken in Node.js-applicaties. Het wordt gebruikt om variabelen, conditionele logica en herbruikbare componenten in HTML-pagina's in te voegen, waardoor het bouwen van webpagina's eenvoudiger en efficiënter wordt.
 
-Zie stukje socket.io code hieronder:
+- Ik heb een realtime web-app gebouwd voor mijn opdrachtgever, om dit te kunnen bereiken heb ik sockets.io, Ejs, Nodejs gebruik van gemaakt, hieronder een stukje server-side code:
 
 ```js
-// ================================================
-
 app.get("/chatroom", (request, response) => {
   response.render("chatroom");
 });
@@ -91,41 +92,36 @@ function longPollExample(io) {
   io.emit("whatever", "somebody set up us the bomb!");
 }
 
-// =================================================
-
 http.listen(8001, () => {
   console.log("listening on http://localhost:8001");
 });
 ```
-
  
-### Tools 🧰:
+### Tools:
 -  VsCode
 -  Pen&Papier
 -  Laptop
 
-### Gebruikte Technieken 🛠️:
+### Gebruikte Technieken:
 - Html
 - Css
 - Node.js
 - Js
 - Socket.io
 
-### Communicatie Middelen 🗣️:
+### Communicatie Middelen:
 - Teams
 - WhatsApp
 
 
-## 🌐 Bronnen
+## Bronnen
 
-<ul>
-<li>https://github.com//</li>
-<li>https://www.google.nl/</li>
-</ul>
+- [Express](https://expressjs.com/en/4x/api.html)
+- [socket.io](https://socket.io/)
+- [live coded example](https://github.com/ju5tu5/barebonechat)
+= [chat demo from socket.io](https://socket.io/get-started/chat/)
 
-
-
-## 🔒 Licentie
+## Licentie
 
 ![GNU GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
 
