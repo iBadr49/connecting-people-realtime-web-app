@@ -119,7 +119,7 @@ http.listen(8001, () => {
 - [Express](https://expressjs.com/en/4x/api.html)
 - [socket.io](https://socket.io/)
 - [live coded example](https://github.com/ju5tu5/barebonechat)
-= [chat demo from socket.io](https://socket.io/get-started/chat/)
+- [chat demo from socket.io](https://socket.io/get-started/chat/)
 
 ## Licentie
 
