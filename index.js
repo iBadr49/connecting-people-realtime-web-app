@@ -12,14 +12,8 @@ const port = process.env.PORT || 4242
 import { log } from "console";
 import { ppid } from "process";
 
-// socket io
-
 
 // Maak een nieuwe express app aan
-
-
-
-
 const url = "https://api.vinimini.fdnd.nl/api/v1/producten"; // URL naar Json data
 const url2 = "https://api.vinimini.fdnd.nl/api/v1";
 
