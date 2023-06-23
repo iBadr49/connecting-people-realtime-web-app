@@ -222,9 +222,7 @@ nav {
   overflow-y: scroll;
 }
 
-::-webkit-scrollbar {
-  background: transparent;
-}
+
 
 .section-chatroom ul > li {
   padding: 0.5rem 1rem;
