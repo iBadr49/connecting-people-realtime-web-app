@@ -22,7 +22,10 @@
 
 Ik heb deze website op mobile-versie gebouwd voor opdrachtgever vinimini, dus na het inloggen op je vinimini accouct kan je je gegevens zien, proces, agenda, vinimini producten, en de chatroom waar je tussen de minions kan communiceren. 
 
-- Als je de website niet met de link kan openen, dan kan je mijn [figma](https://www.figma.com/file/2TLM9ivN6gl8fGoKuWwDtI/Mijn-Website-%7C-Realtime-web-app?type=design&node-id=0%3A1&mode=design&t=3VN5odMlgWETj3kU-1) bestand gebruiken en mijn website bekijken.
+![image](https://github.com/iBadr49/connecting-people-realtime-web-app/assets/112857932/fe5dcb42-4a98-45b2-9be4-9ebb1b5ff75a)
+- Productenpagina
+
+Je kan ook mijn [figma](https://www.figma.com/file/2TLM9ivN6gl8fGoKuWwDtI/Mijn-Website-%7C-Realtime-web-app?type=design&node-id=0%3A1&mode=design&t=3VN5odMlgWETj3kU-1) bestand gebruiken en mijn website te bekijken, als je via de link de website niet kan openen.
 
 ## Kenmerken
 Wat is Node:
