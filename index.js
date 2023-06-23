@@ -1,18 +1,24 @@
 // Express uit de nodemodules map
-import { log } from "console";
+import * as path from "path"
+import { Server } from "socket.io";
+import { createServer } from "http";
 import express from "express";
+
+const app = express();
+const http = createServer(app);
+const io = new Server(http);
+const port = process.env.PORT || 4242
+
+import { log } from "console";
 import { ppid } from "process";
 
 // socket io
-import * as path from "path";
-import { Server } from "socket.io";
-import { createServer } from "http";
+
 
 // Maak een nieuwe express app aan
-const app = express();
 
-const http = createServer(app);
-const io = new Server(http);
+
+
 
 const url = "https://api.vinimini.fdnd.nl/api/v1/producten"; // URL naar Json data
 const url2 = "https://api.vinimini.fdnd.nl/api/v1";
