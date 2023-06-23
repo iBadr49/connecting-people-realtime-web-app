@@ -159,9 +159,9 @@ function longPollExample(io) {
 
 // =================================================
 
-http.listen(8001, () => {
-  console.log("listening on http://localhost:8001");
-});
+http.listen(port, () => {
+  console.log('listening on http://localhost:' + port)
+})
 
 /**
  * Wraps the fetch api and returns the response body parsed through json
