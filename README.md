@@ -1,5 +1,5 @@
 
-# Vini Mini chatroom
+# Vinimini | Chatroom
 
 ![Schermafbeelding 2023-06-02 104326](https://github.com/iBadr49/connecting-people-realtime-web-app/assets/112856683/b41b55ed-02c8-45d6-ac24-31479b003d0f)
 
@@ -13,9 +13,9 @@
 * [Licentie](#licentie)
 
 ## 🗒️ Beschrijving
-<strong>Vini Mini 🖌️:</strong>
+<strong>Vinimini 🖌️:</strong>
 
-<li>Maak een chatroom via socket.io</li>
+<li>Een chatroom gemaakt waar de verzorgers of ouders tussen elkaar kunnen chatten!</li>
 </ul>
 
 ## 👩🏼‍💻👩🏾‍💻👨🏻‍💻👨🏼‍💻 Kenmerken
@@ -32,37 +32,96 @@ Express is een framework voor Node.js waarmee ontwikkelaars gemakkelijk web-appl
 Wat is EJS:
 EJS is een sjabloontaal waarmee ontwikkelaars dynamische HTML-pagina's kunnen maken in Node.js-applicaties. Het wordt gebruikt om variabelen, conditionele logica en herbruikbare componenten in HTML-pagina's in te voegen, waardoor het bouwen van webpagina's eenvoudiger en efficiënter wordt.
 
+Zie stukje socket.io code hieronder:
 
-<ul>
-<li><strong>TOOLS 🧰:</strong></li>
-<li>VSCode</li>
-<li>Pen & Papier</li>
-<li>Laptop</li>
-</ul>
+```js
+// ================================================
 
-<ul>
-<li><strong>GEBRUIKTE TECHNIEKEN 🛠️:</strong></li>
-<li>HTML</li>
-<li>CSS</li>
-<li>Javascript</li>
-<li>Node<li>
-<li>Socket.io<li>
-</ul>
+app.get("/chatroom", (request, response) => {
+  response.render("chatroom");
+});
 
-<ul>
-<li><strong>COMMUNICATIE MIDDELEN 🗣️:</strong></li>
-<li>Microsoft Teams</li>
-</ul>
+const historySize = 50;
+
+let history = [];
+let membersLoaded = false;
+let htmlMemberList = null;
+
+// Serveer client-side bestanden
+io.on("connection", (socket) => {
+  // Log de connectie naar console
+  console.log("a user connected");
+  // Stuur de historie door, let op: luister op socket, emit op io!
+  io.emit("history", history);
+
+  // Luister naar een message van een gebruiker
+  socket.on("message", (message) => {
+    // Check de maximum lengte van de historie
+    while (history.length > historySize) {
+      history.shift();
+    }
+    // Voeg het toe aan de historie
+    history.push(message);
+    // Verstuur het bericht naar alle clients
+    io.emit("message", message);
+  });
+
+  // Luister naar een disconnect van een gebruiker
+  socket.on("disconnect", () => {
+    console.log("user disconnected");
+  });
+});
+
+function renderMembers(memberList) {
+  return memberList
+    .filter((member) => member.role.includes("student"))
+    .map((member) => renderMember(member))
+    .reduce((output, member) => output + member);
+}
+
+function renderMember(member) {
+  return `
+    <article>
+      <h2>${member.name}</h2>
+      <p>${member.bio ? member.bio.html : ""}</p>
+    </article>
+  `;
+}
+
+function longPollExample(io) {
+  io.emit("whatever", "somebody set up us the bomb!");
+}
+
+// =================================================
+
+http.listen(8001, () => {
+  console.log("listening on http://localhost:8001");
+});
+```
+
+ 
+### Tools 🧰:
+-  VsCode
+-  Pen&Papier
+-  Laptop
+
+### Gebruikte Technieken 🛠️:
+- Html
+- Css
+- Node.js
+- Js
+- Socket.io
+
+### Communicatie Middelen 🗣️:
+- Teams
+- WhatsApp
 
 
 ## 🌐 Bronnen
 
 <ul>
-
 <li>https://github.com//</li>
-
 <li>https://www.google.nl/</li>
-
 </ul>
 
 
