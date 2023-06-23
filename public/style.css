@@ -48,8 +48,8 @@ body {
 
 nav {
   display: flex;
-  justify-content: space-between; /* this will position the shopping.png on the left and the toggle on the right */
-  align-items: center; /* this will vertically center the logo */
+  justify-content: space-between; 
+  align-items: center; 
 }
 /* Style for the logo img */
 nav img.logo {
@@ -207,7 +207,6 @@ nav {
 
 .section-chatroom h1 span {
   font-size: 0.5rem;
-  /* display: inline-block; */
   width: 4.5rem;
   color: var(--lightgreen);
   text-transform: uppercase;
@@ -221,8 +220,6 @@ nav {
   width: 18em;
   overflow-y: scroll;
 }
-
-
 
 .section-chatroom ul > li {
   padding: 0.5rem 1rem;
@@ -282,7 +279,6 @@ ul li {
 }
 
 
-
 /* ---------------------------- AccountOverzicht, Mini | Profiel */
 
 .container {
@@ -338,9 +334,6 @@ ul li span {
   color: var(--black);
   border: 1px solid var(--lightgreen);
 }
-
-
-
 
 /* ----------------------------------- Procespagina */
 
@@ -425,7 +418,6 @@ margin-bottom: 2rem;
   color: var(--black);
   padding: 20px;
   margin: 20px;
-  /* text-align: center; */
   border-radius: 10px;
 }
 
@@ -627,7 +619,6 @@ caption {
   }
 }
 
-
 /* ---------------------------------- Notitie Posten */
 
 .form {
@@ -725,14 +716,6 @@ caption {
   display: inline-block;
   margin-right: 10px;
 }
-
-
-
-
-
-
-
-
 
 /* ----------------------------------- Productenpagina */
 

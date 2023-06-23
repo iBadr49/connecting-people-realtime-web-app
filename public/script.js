@@ -52,11 +52,6 @@ socket.on('history', (history) => {
   })
 })
 
-// function addMessage(message) {
-//   messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
-//   messages.scrollTop = messages.scrollHeight
-// }
-
 // Agenda
 window.addEventListener('DOMContentLoaded', function () {
   const toggleCalendar = document.getElementById('toggleCalendar');
