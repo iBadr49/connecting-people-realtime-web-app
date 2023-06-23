@@ -1,8 +1,7 @@
 
 # Vinimini | Chatroom
 
-![Schermafbeelding 2023-06-02 104326](https://github.com/iBadr49/connecting-people-realtime-web-app/assets/112856683/b41b55ed-02c8-45d6-ac24-31479b003d0f)
-
+![image](https://github.com/iBadr49/connecting-people-realtime-web-app/assets/112857932/0a36c173-4330-41cb-bf93-35d8e65444f8)
 
 
 ## 📚 Inhoudsopgave
