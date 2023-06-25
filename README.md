@@ -12,7 +12,7 @@
 * [Gebruik](#gebruik)
 * [Licentie](#licentie)
 
-## 🗒️ Beschrijving
+## Beschrijving
 <strong>Vinimini:</strong>
 
 <li>Een chatroom gemaakt waar de verzorgers of ouders tussen elkaar kunnen chatten, waar ik deze [userstory#6](https://github.com/orgs/fdnd-agency/projects/6?pane=issue&itemId=10774985) heb geimplementeerd.</li>
@@ -20,9 +20,9 @@
 
 ## Gebruik
 
-Ik heb deze website op mobile-versie gebouwd voor opdrachtgever vinimini, dus na het inloggen op je vinimini accouct kan je je gegevens zien, proces, agenda, vinimini producten, en de chatroom waar je tussen de minions kan communiceren. 
+Ik heb deze website op mobile-versie gebouwd voor opdrachtgever vinimini, dus na het inloggen op je vinimini accouct kan je je gegevens zien, proces, agenda, vinimini producten, en de chatroom waar ouders tussen elkaar kunnen communiceren. 
 
-- Je kan ook mijn [figma](https://www.figma.com/file/2TLM9ivN6gl8fGoKuWwDtI/Mijn-Website-%7C-Realtime-web-app?type=design&node-id=0%3A1&mode=design&t=3VN5odMlgWETj3kU-1) bestand gebruiken en mijn website bekijken, als je via de link de website niet kan openen.
+- Je kan ook mijn [Figma](https://www.figma.com/file/2TLM9ivN6gl8fGoKuWwDtI/Mijn-Website-%7C-Realtime-web-app?type=design&node-id=0%3A1&mode=design&t=3VN5odMlgWETj3kU-1) bestand gebruiken en mijn website bekijken, als je via de link de website niet kan openen.
 
 ## Kenmerken
 Wat is Node:
